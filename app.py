@@ -7,4 +7,3 @@ mostrar_venta()
 
 
 
-
