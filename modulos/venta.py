@@ -21,7 +21,7 @@ def mostrar_venta():
                     try:
                         cursor.execute(
                             "INSERT INTO Ventas (Producto, Cantidad) VALUES (%s, %s)",
-                            (producto, str(cantidad))
+                            (producto, int(cantidad))
                         )
                         con.commit()
                         st.success(f"✅ Venta registrada correctamente: {producto} (Cantidad: {cantidad})")
@@ -34,8 +34,9 @@ def mostrar_venta():
         st.error(f"❌ Error general: {e}")
 
     finally:
-        if 'cursor' in locals():
+        if 'cursor' in locals() and cursor:
             cursor.close()
-        if 'con' in locals():
+        if 'con' in locals() and con:
             con.close()
+
 
