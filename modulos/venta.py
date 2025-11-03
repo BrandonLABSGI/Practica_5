@@ -39,5 +39,3 @@ def mostrar_venta():
         if 'con' in locals():
             con.close()
 
-
-
